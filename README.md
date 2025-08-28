@@ -32,7 +32,7 @@ Users can test their typing speed, view stats like WPM, accuracy, and errors, an
 ![Login](assets/screenshots/login.png)
 
 ### Results Screen
-![Results](assets/screenshots/results.png)
+![Results](assets/screenshots/result.png)
 
 ### Leaderboard
 ![Leaderboard](assets/screenshots/leaderboard.png)
