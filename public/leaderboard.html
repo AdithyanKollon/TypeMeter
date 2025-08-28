@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leaderboard - Typing Test</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="app-header">
+    <a href="index.html" class="logo">TypeMeter</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">🌙</button>
+  </header>
+
+  <div class="leaderboard-container">
+    <h1>Leaderboard</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Highest WPM</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body">
+        <!-- Filled dynamically -->
+      </tbody>
+    </table>
+
+    <p style="text-align:center;">
+      <a href="index.html">Back to Test</a>
+    </p>
+  </div>
+
+  <script src="theme.js"></script>
+  <script>
+    async function loadLeaderboard() {
+      try {
+        const res = await fetch("/auth/leaderboard");
+        const users = await res.json();
+        const tbody = document.getElementById("leaderboard-body");
+        tbody.innerHTML = "";
+
+        users.forEach((user, index) => {
+          const row = `<tr>
+            <td>${index + 1}</td>
+            <td>${user.username}</td>
+            <td>${user.highestWPM}</td>
+          </tr>`;
+          tbody.insertAdjacentHTML("beforeend", row);
+        });
+      } catch (e) {
+        // optional: show message
+      }
+    }
+    loadLeaderboard();
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <a href="index.html" class="logo">TypeMeter</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">🌙</button>
+  </header>
+
+  <div class="container">
+    <h1>Typing Test</h1>
+    <div id="user-info"></div>
+
+    <!-- Stats shown while playing -->
+    <div id="stats">
+      <span>Time: <span id="time">60</span>s</span>
+      <span>WPM: <span id="wpm">0</span></span>
+      <span>Errors: <span id="errors">0</span></span>
+    </div>
+
+    <!-- Words -->
+    <div id="word-container"></div>
+
+    <!-- Typing area -->
+    <textarea id="input-area" placeholder="Start typing..." autocomplete="off" autocorrect="off" autocapitalize="off"
+      spellcheck="false"></textarea>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button id="start-btn">Start Test</button>
+      <button id="refresh-btn" style="display:none;"> Refresh</button>
+    </div>
+
+    <!-- Results (after test ends) -->
+    <div id="results" style="display:none;">
+      <h2>Results</h2>
+      <div class="results-grid">
+        <div class="result-item wpm">
+          <span class="label">WPM</span>
+          <span class="value" id="final-wpm">0</span>
+        </div>
+        <div class="result-item accuracy">
+          <span class="label">Accuracy</span>
+          <span class="value" id="final-accuracy">0%</span>
+        </div>
+        <div class="result-item errors">
+          <span class="label">Wrong Chars</span>
+          <span class="value" id="final-errors">0</span>
+        </div>
+      </div>
+
+
+      <!-- Session summary box -->
+      <div id="session-summary" class="summary-card">
+        <div class="summary-grid">
+
+          <div class="summary-item"><span class="label">Words Typed: </span><span class="value" id="sum-words">0</span>
+          </div><br>
+          <div class="summary-item"><span class="label">Chars Typed: </span><span class="value" id="sum-chars">0</span>
+          </div><br>
+          <div class="summary-item"><span class="label">Correct Chars: </span><span class="value"
+              id="sum-correct">0</span></div><br>
+          <div class="summary-item"><span class="label">Errors: </span><span class="value" id="sum-errors">0</span>
+          </div><br>
+          <div class="summary-item"><span class="label">Net WPM: </span><span class="value" id="sum-net-wpm">0</span>
+          </div><br>
+        </div>
+        <div class="summary-actions">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <a href="signup.html" class="link-btn">Signup</a>
+      <a href="login.html" class="link-btn">Login</a>
+      <a href="leaderboard.html" class="link-btn">Leaderboard</a>
+    </div>
+
+  </div>
+
+  <script src="theme.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>

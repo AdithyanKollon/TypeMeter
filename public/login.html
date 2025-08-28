@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Typing Test</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="app-header">
+    <a href="index.html" class="logo">TypeMeter</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">🌙</button>
+  </header>
+
+  <div class="page-container">
+    <h1>Login</h1>
+    <form id="login-form">
+      <input id="username" type="text" placeholder="Username" required/>
+      <input id="password" type="password" placeholder="Password" required/>
+      <button type="submit">Login</button>
+    </form>
+    <a href="signup.html">Don’t have an account? Sign up</a>
+  </div>
+
+  <script src="theme.js"></script>
+  <script>
+    async function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      if (!username || !password) return;
+
+      const res = await fetch("/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+
+      const text = await res.text();
+      alert(text);
+      if (text.toLowerCase().includes("successful")) {
+        window.location.href = "index.html";
+      }
+    }
+
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      login();
+    });
+  </script>
+</body>
+</html>
