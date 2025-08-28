@@ -19,11 +19,17 @@ Users can test their typing speed, view stats like WPM, accuracy, and errors, an
 
 ## 📸 Screenshots
 
-### Home Page
-![Home](assets/screenshots/home.png)
+### Home Page - Dark Mode
+![Home](assets/screenshots/home1.png)
+
+### Home Page - Light Mode
+![Home](assets/screenshots/home2.png)
 
 ### Typing Test in Progress
 ![Test](assets/screenshots/test.png)
+
+### Login Page
+![Login](assets/screenshots/login.png)
 
 ### Results Screen
 ![Results](assets/screenshots/results.png)
@@ -78,5 +84,5 @@ Users can test their typing speed, view stats like WPM, accuracy, and errors, an
 ## 👨‍💻 Author
 Developed by **Adithyan K**  
 
-If you like this project ⭐ the repo!
+
 
