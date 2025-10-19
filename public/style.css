@@ -300,9 +300,6 @@ body.dark .app-header {
   transform: translateY(-2px);    /* subtle lift effect */
 }
 
-body.dark .logo {
-  color: #4da3ff;
-}
 
 /* Theme toggle button */
 .theme-toggle {
