@@ -40,8 +40,13 @@ app.get('/', (req, res) => {
 // ===== DATABASE CONNECTION =====
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ MongoDB Connected'))
-  .catch((err) => console.error('❌ MongoDB connection error:', err));
+  .then(() => {
+    console.log('✅ MongoDB Atlas Connected');
+    app.listen(process.env.PORT || 3000, () => {
+      console.log(`🚀 Server running`);
+    });
+  })
+  .catch((err) => console.error('❌ MongoDB connection error:', err));    
 
 // ===== START SERVER =====
 app.listen(process.env.PORT || 3000, () => {

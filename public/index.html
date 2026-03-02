@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TypeMeter - Test Your Typing Speed</title>
   <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Test and improve your typing speed with TypeMeter">
+  <meta name="description" content="Test and improve your typing speed with TypeMeter" />
 </head>
-
 <body>
   <header class="app-header">
     <a href="index.html" class="logo">TypeMeter</a>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">🌙</button>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">Dark</button>
   </header>
 
   <div class="container">
-    <h1>⚡ Typing Speed Test</h1>
+    <h1>Typing Speed Test</h1>
     <div id="user-info"></div>
 
-    <!-- Stats shown while playing -->
+    <div class="test-controls">
+      <label for="duration-preset">Duration</label>
+      <select id="duration-preset">
+        <option value="30">30s</option>
+        <option value="60" selected>60s</option>
+        <option value="90">90s</option>
+        <option value="120">120s</option>
+        <option value="custom">Custom</option>
+      </select>
+      <input id="custom-seconds" type="number" min="10" max="300" value="60" />
+      <button id="set-duration-btn" type="button">Set Seconds</button>
+    </div>
+
     <div id="stats">
       <span>
         Time
@@ -35,22 +45,26 @@
       </span>
     </div>
 
-    <!-- Words -->
     <div id="word-container"></div>
 
-    <!-- Typing area -->
-    <textarea id="input-area" placeholder="Click 'Start Test' and begin typing..." autocomplete="off" autocorrect="off" autocapitalize="off"
-      spellcheck="false" rows="3"></textarea>
+    <textarea
+      id="input-area"
+      placeholder="Click Start Test and begin typing..."
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
+      rows="3"
+    ></textarea>
 
-    <!-- Buttons -->
     <div class="buttons">
       <button id="start-btn">Start Test</button>
-      <button id="refresh-btn" style="display:none;">↻ Refresh</button>
+      <button id="refresh-btn" style="display: none;">Reset Test</button>
+      <button id="end-btn" style="display: none;">End Test</button>
     </div>
 
-    <!-- Results (after test ends) -->
-    <div id="results" style="display:none;">
-      <h2> Your Results</h2>
+    <div id="results" style="display: none;">
+      <h2>Your Results</h2>
       <div class="results-grid">
         <div class="result-item wpm">
           <span class="label">WPM</span>
@@ -66,7 +80,6 @@
         </div>
       </div>
 
-      <!-- Session summary box -->
       <div id="session-summary" class="summary-card">
         <div class="summary-grid">
           <div class="summary-item">
@@ -94,15 +107,13 @@
     </div>
 
     <div class="footer-links">
-      <a href="signup.html" class="link-btn"> Signup</a>
-      <a href="login.html" class="link-btn"> Login</a>
-      <a href="leaderboard.html" class="link-btn"> Leaderboard</a>
+      <a href="signup.html" class="link-btn">Sign Up</a>
+      <a href="login.html" class="link-btn">Log In</a>
+      <a href="leaderboard.html" class="link-btn">Leaderboard</a>
     </div>
-
   </div>
 
   <script src="theme.js" defer></script>
   <script src="script.js" defer></script>
 </body>
-
 </html>
