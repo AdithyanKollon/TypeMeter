@@ -1,5 +1,7 @@
 # TypeMeter ⌨️
 
+[![Live Demo](https://typemeter.onrender.com/)
+
 > A full-stack typing speed test app with real-time metrics, user authentication, and competitive leaderboards.
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
