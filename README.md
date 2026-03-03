@@ -1,88 +1,95 @@
+# TypeMeter - Typing Test Application
 
-# Typing Test Web App ⌨️
+A full-stack typing speed test application built with `Node.js`, `Express`, `MongoDB`, and vanilla `HTML/CSS/JavaScript`.
 
-A full-stack **Typing Speed Test Application** built with **Node.js, Express, MongoDB Atlas, HTML, CSS, and JavaScript**.  
-Users can test their typing speed, view stats like WPM, accuracy, and errors, and compete on a global leaderboard.
+Users can run timed typing tests, track `WPM`, `accuracy`, and `errors` in real time, and compete through a leaderboard backed by MongoDB.
 
----
+## Features
+- User authentication with signup, login, session-based auth, and logout
+- Real-time typing engine with live WPM, error counting, and accuracy calculation
+- Configurable test duration (preset values + custom seconds)
+- Manual `End Test` support before timer completion
+- Leaderboard with top users ranked by highest WPM
+- Persistent dark/light theme preference
+- Responsive UI for desktop and mobile
 
-## 🚀 Features
-- Character-by-character typing validation (green for correct, red for incorrect).  
-- Real-time **WPM (Words Per Minute)** calculation.  
-- Tracks **Errors** and **Accuracy**.  
-- **Leaderboard** with top performers (MongoDB).  
-- User authentication (Signup/Login).  
-- Dark mode toggle 🌙 / ☀️.  
-- Responsive & clean UI.
+## Tech Stack
+- Frontend: `HTML`, `CSS`, `JavaScript`
+- Backend: `Node.js`, `Express`
+- Database: `MongoDB` with `Mongoose`
+- Authentication: `express-session`, `connect-mongo`, `bcryptjs`
 
----
+## Project Structure
+```text
+typing-test-app/
+  public/
+    index.html
+    leaderboard.html
+    login.html
+    signup.html
+    style.css
+    script.js
+    theme.js
+  routes/
+    auth.js
+  models/
+    user.js
+  server.js
+  package.json
+```
 
-## 📸 Screenshots
+## Setup and Run
+1. Clone the repository
+```bash
+git clone <your-repo-url>
+cd typing-test-app
+```
 
-### Home Page - Dark Mode
-![Home](assets/screenshots/home1.png)
+2. Install dependencies
+```bash
+npm install
+```
 
-### Home Page - Light Mode
-![Home](assets/screenshots/home2.png)
+3. Create `.env` file
+```env
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+SESSION_SECRET=your_session_secret
+```
 
-### Typing Test in Progress
-![Test](assets/screenshots/test.png)
+4. Start the server
+```bash
+npm start
+```
 
-### Login Page
-![Login](assets/screenshots/login.png)
+5. Open in browser
+```text
+http://localhost:3000
+```
 
-### Results Screen
-![Results](assets/screenshots/result.png)
+## API Endpoints
+All auth and score routes are mounted under `/auth`.
 
-### Leaderboard
-![Leaderboard](assets/screenshots/leaderboard.png)
+- `POST /auth/signup` - register a new user
+- `POST /auth/login` - authenticate user
+- `GET /auth/logout` - logout and clear session
+- `GET /auth/me` - get current logged-in user profile
+- `POST /auth/save-score` - save/update highest WPM for logged-in user
+- `GET /auth/leaderboard` - fetch top users by highest WPM
 
----
+## Screenshots
+- [Home (Dark)](assets/screenshots/home1.png)
+- [Home (Light)](assets/screenshots/home2.png)
+- [Typing Test](assets/screenshots/test.png)
+- [Login](assets/screenshots/login.png)
+- [Results](assets/screenshots/result.png)
+- [Leaderboard](assets/screenshots/leaderboard.png)
 
-## 🛠 Tech Stack
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** Node.js, Express  
-- **Database:** MongoDB (Atlas / Local)  
-- **Tools:** Git, Postman
+## Resume Highlights
+- Built a full-stack typing test platform with secure authentication and persistent score tracking
+- Implemented a real-time typing engine with live metrics and configurable duration
+- Designed leaderboard ranking logic using MongoDB aggregation/sorting patterns
+- Created a responsive, theme-enabled UI with session-aware user flows
 
----
-
-## ⚙️ Installation & Setup
-
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/your-username/typing-test-app.git
-   cd typing-test-app
-   ```
-
-2. Install dependencies  
-   ```bash
-   npm install
-   ```
-
-3. Start MongoDB locally or connect MongoDB Atlas.  
-
-4. Run the server  
-   ```bash
-   node server.js
-   ```
-
-5. Visit in browser:  
-   ```
-   http://localhost:3000
-   ```
-
----
-
-## 📈 Future Improvements
-- Add multiplayer typing races 🏁  
-- More word lists & difficulty levels  
-- Support for different test durations (30s, 1min, 2min)  
-
----
-
-## 👨‍💻 Author
-Developed by **Adithyan K**  
-
-
-
+## Security Note
+If secrets or database credentials were committed during development, rotate them immediately and replace with new values.
