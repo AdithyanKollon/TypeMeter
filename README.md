@@ -1,6 +1,6 @@
 # TypeMeter ⌨️
 
-[![Live Demo](https://typemeter.onrender.com/)
+![Live Demo](https://typemeter.onrender.com/)
 
 > A full-stack typing speed test app with real-time metrics, user authentication, and competitive leaderboards.
 
